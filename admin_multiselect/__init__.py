@@ -1,1 +1,1 @@
-from .widgets import BetterFilterWidget
+from .widgets import DjangoAdminMultiselect
