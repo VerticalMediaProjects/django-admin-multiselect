@@ -3,3 +3,5 @@ Alternative multiple select widget that works with mobile devices.
 
 Inspired from
 https://github.com/ExoticObjects/django-better-filter-widget
+and
+http://loudev.com/
