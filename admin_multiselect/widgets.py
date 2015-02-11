@@ -51,7 +51,6 @@ class DjangoAdminMultiselect(forms.SelectMultiple):
                             this.qs2.cache();
                           }
                         });
-                    });
                 })(grp.jQuery || django.jQuery);
         	</script>
         ''' % name
