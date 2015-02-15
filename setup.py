@@ -2,12 +2,12 @@ import os
 from setuptools import setup, find_packages
 setup(
     name='django-admin-multiselect',
-    version='0.0.5',
+    version='0.0.6',
     description='Alternative multiple select widget that works with mobile devices.',
     author='Kreios S.a r.l.',
     author_email='christian.hillerkus@kreios.lu',
     url='https://github.com/kreioslu/django-admin-multiselect',
-    download_url='https://github.com/kreioslu/django-admin-multiselect/tarball/0.0.5',
+    download_url='https://github.com/kreioslu/django-admin-multiselect/tarball/0.0.6',
     packages=find_packages(),
     classifiers=[
         'Environment :: Web Environment',
