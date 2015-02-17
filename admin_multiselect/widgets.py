@@ -15,8 +15,9 @@ class DjangoAdminMultiselect(forms.SelectMultiple):
         output += u'''
         	<script type="text/javascript">
 		(function($) {
-                    $(window).ready(function(){
-                        $('#id_%s').multiSelect({
+			var el = $('#id_%s');
+			var el_id = el.attr('id');
+			var options = {
 				 selectableHeader: "<input type='text' class='search-input' autocomplete='off' placeholder='search available'>",
 				  selectionHeader: "<input type='text' class='search-input' autocomplete='off' placeholder='search selected'>",
 				  afterInit: function(ms){
@@ -50,8 +51,22 @@ class DjangoAdminMultiselect(forms.SelectMultiple):
 				    this.qs1.cache();
 				    this.qs2.cache();
 				  }
+			};
+
+			if(el_id.indexOf('__prefix__') === -1)
+		        	el.multiSelect(options);
+	       		
+			$('body').on('click', '.grp-add-handler', function() {
+				var $group_root = $(this).parents('.grp-collapse');			
+				var $group_root_id = $group_root.attr('id');
+
+				setTimeout(function () {
+					var $last_added = $group_root.find('.grp-dynamic-form.grp-tbody').last();
+					var $select_el = $last_added.find('[multiple=multiple]');
+		 			$select_el.multiSelect(options);			
+				}, 10);			
+
 			});
-                    });
 		
                 })(grp.jQuery || django.jQuery);
         	</script>
